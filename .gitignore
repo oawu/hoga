@@ -1,8 +1,26 @@
 .DS_Store
 sftp-config*
 
-cmd/.sass-cache/*
+application/cell/cache/*
 
-cmd/node_modules/*
-cmd/.sass-cache/*
-cmd/npm-debug.log
+application/cache/*
+!application/cache/index.html
+!application/cache/.htaccess
+
+application/logs/*
+!application/logs/index.html
+!application/logs/.htaccess
+
+application/config/database.php
+
+temp/*
+
+upload/*
+
+assets/*
+
+/cmd
+
+system/cmd/.sass-cache/*
+system/cmd/node_modules/*
+system/cmd/npm-debug.log
