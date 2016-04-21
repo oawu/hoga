@@ -51,6 +51,26 @@ class Oa_controller extends Root_controller {
     return $this;
   }
 
+  protected function set_back_link ($back_link) {
+    if (is_string ($back_link))
+      $this->add_param ('back_link', $back_link);
+    return $this;
+  }
+
+  protected function set_subtitle ($subtitle) {
+    if (is_string ($subtitle))
+      $this->add_param ('subtitle', $subtitle);
+    return $this;
+  }
+  protected function set_tab_index ($tab_index = null) {
+    $this->add_param ('tab_index', $tab_index);
+    return $this;
+  }
+  protected function add_tab ($key, $val) {
+    if (is_string ($key))
+      $this->tabs[$key] = $val;
+    return $this;
+  }
   protected function add_meta ($attributes) {
     if (isset ($attributes['name']))
       $this->meta_list = array_filter ($this->meta_list, function ($meta) use ($attributes) { return !isset ($meta['name']) || ($meta['name'] != $attributes['name']);});

@@ -1,0 +1,202 @@
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2016 OA Wu Design
+ */
+
+@import "_oa";
+
+body {
+  position: relative;
+  background-color: rgba(247, 248, 249, 1.00) !important;
+  
+  img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: inline-block;
+    width: 100%;
+    z-index: -1;
+  }
+  h1 {
+    position: relative;
+    margin-top: 100px;
+    margin-bottom: 15px;
+    font-size: 30px;
+    color: rgba(19, 39, 56, 1.00);
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: calc(50% - 70px / 2);
+      bottom: -10px;
+      display: inline-block;
+      width: 70px;
+      height: 3px;
+      background-color: rgba(233, 123, 33, 1.00);
+    }
+  }
+  h2 {
+    color: rgba(19, 39, 56, 1.00);
+    font-size: 16px;
+    margin-top: 20px;
+  }
+}
+
+#year, #brand {
+  text-align: center;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: calc(50% - 2px / 2);
+
+    width: 100%;
+    height: 2px;
+    background-color: rgba(236, 122, 33, 1.00);
+    z-index: -1;
+  }
+
+  > div {
+    display: inline-block;
+    width: $mainWidth;
+    @include clearfix();
+    
+    a {
+      @include a(0, false, rgba(236, 122, 33, 1.00), rgba(255, 255, 255, 1.00));
+      float: left;
+      border: 2px solid rgba(236, 122, 33, 1.00);
+      @include border-radius(15px);
+      padding: 5px 10px;
+      min-width: 80px;
+      height: 30px;
+      line-height: 15px;
+      font-size: 16px;
+      margin: 10px;
+      cursor: pointer;
+      background-color: rgba(255, 255, 255, 1.00);
+
+      &.a, &:hover {
+        background-color: rgba(236, 122, 33, 1.00);
+        color: rgba(255, 255, 255, 1.00);
+      }
+    }
+  }
+}
+#brand {
+  margin-top: 20px;
+  &:before {
+    background-color: rgba(248, 172, 99, 1.00);
+  }
+  > div {
+    a {
+      @include a(0, false, rgba(248, 172, 99, 1.00), rgba(255, 255, 255, 1.00));
+      border-color: rgba(248, 172, 99, 1.00);
+      line-height: 15px;
+      padding: 5px 10px;
+
+      &.a, &:hover {
+        background-color: rgba(248, 172, 99, 1.00);
+        color: rgba(255, 255, 255, 1.00);
+      }
+    }
+  }
+}
+#anns {
+  display: inline-block;
+  width: $mainWidth;
+  margin: 50px auto;
+  background-color: rgba(251, 252, 253, 1.00);
+  text-align: left;
+  padding: 0 40px;
+
+  > a {
+    display: inline-block;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+      h2 {
+        color: rgba(237, 119, 38, 1.00);
+      }
+    }
+
+    + a {
+      border-top: 1px solid rgba(223, 224, 225, 1.00);
+    }
+    header {
+      h2 {
+        color: rgba(22, 34, 48, 1.00);
+        margin: 5px 0;
+        font-size: 20px;
+        @include transition(color .3s);
+      }
+      span {
+        color: rgba(143, 144, 145, 1.00);
+      }
+    }
+    article {
+      margin: 15px 0;
+      font-size: 15px;
+      line-height: 20px;
+      color: rgba(128, 129, 130, 1.00);
+    }
+  }
+  > div {
+    text-align: center;
+    &.no {
+      padding: 10px;
+    }
+    ul {
+      display: inline-block;
+      list-style-type: none;
+      padding: 0;
+      @include clearfix();
+
+      li {
+        float: left;
+        position: relative;
+
+        &.active {
+          &:before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            bottom: 0;
+            display: inline-block;
+            width: calc(100% - 10px * 2);
+            height: 3px;
+            background-color: rgba(236, 122, 33, 1.00);
+          }
+        }
+        + li {
+          &:after {
+            content: '';
+            position: absolute;
+            left: -1px;
+            top: 10px;
+            display: inline-block;
+            width: 2px;
+            height: calc(100% - 10px * 2);
+            background-color: rgba(73, 87, 99, .800);
+          }
+        }
+        
+        a {
+          @include a(0, false, rgba(80, 93, 101, 1.00), rgba(80, 93, 101, 1.00));
+          font-size: 15px;
+          padding: 5px 10px;
+          margin: 5px 10px;
+        }
+
+        &.n, &.p {
+          display: none;
+        }
+      }
+    }
+  }
+}

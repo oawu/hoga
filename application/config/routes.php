@@ -1,57 +1,30 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-/*
-| -------------------------------------------------------------------------
-| URI ROUTING
-| -------------------------------------------------------------------------
-| This file lets you re-map URI requests to specific controller functions.
-|
-| Typically there is a one-to-one relationship between a URL string
-| and its corresponding controller class/method. The segments in a
-| URL normally follow this pattern:
-|
-|	example.com/class/method/id/
-|
-| In some instances, however, you may want to remap this relationship
-| so that a different class/function is called than the one
-| corresponding to the URL.
-|
-| Please see the user guide for complete details:
-|
-|	http://codeigniter.com/user_guide/general/routing.html
-|
-| -------------------------------------------------------------------------
-| RESERVED ROUTES
-| -------------------------------------------------------------------------
-|
-| There area two reserved routes:
-|
-|	$route['default_controller'] = 'welcome';
-|
-| This route indicates which controller class should be loaded if the
-| URI contains no data. In the above example, the "welcome" class
-| would be loaded.
-|
-|	$route['404_override'] = 'errors/page_missing';
-|
-| This route will tell the Router what URI segments to use if those provided
-| in the URL cannot be matched to a valid route.
-|
-*/
-// $route['404_override'] = '';
 
-// $route['default_controller'] = "main";
 Route::root ('main');
 
-// $route['admin'] = "admin/main";
-Route::get ('admin', 'admin/main@index');
+Route::get ('/login', 'platform@login');
+Route::get ('/sign_out', 'platform@sign_out');
+Route::get ('/platform/index', 'platform@login');
+Route::get ('/platform', 'platform@login');
 
-// $route['main/index/(:num)/(:num)'] = "main/aaa/$1/$2";
-// Route::get ('main/index/(:num)/(:num)', 'main@aaa($1, $2)');
-// Route::post ('main/index/(:num)/(:num)', 'main@aaa($1, $2)');
-// Route::put ('main/index/(:num)/(:num)', 'main@aaa($1, $2)');
-// Route::delete ('main/index/(:num)/(:num)', 'main@aaa($1, $2)');
-// Route::controller ('main', 'main');
-  // whit get、post、put、delete prefix
+Route::resourcePagination (array ('anns'), 'anns');
+Route::get ('/ann/(:id)', 'anns@show($1)');
 
-/* End of file routes.php */
-/* Location: ./application/config/routes.php */
+Route::group ('admin', function () {
+  Route::get ('/', 'main');
+  Route::resourcePagination_is_enabled (array ('brands'), 'brands');
+  Route::resourcePagination_is_enabled (array ('anns'), 'anns');
+  Route::resourcePagination_is_enabled (array ('banners'), 'banners');
+  Route::resourcePagination_is_enabled (array ('look_banners'), 'look_banners');
+  Route::resourcePagination_is_enabled (array ('look_products'), 'look_products');
+  Route::resourcePagination_is_enabled (array ('look_presses'), 'look_presses');
+  Route::resourcePagination_is_enabled (array ('look_store_tags'), 'look_store_tags');
+  Route::resourcePagination_is_enabled (array ('look_stores'), 'look_stores');
+});
+
+Route::group ('look', function () {
+  Route::get ('/', 'main');
+  Route::get ('/abouts/1', 'abouts@index(1)');
+  Route::get ('/abouts/', 'abouts@index(1)');
+  Route::get ('/abouts/2', 'abouts@index(2)');
+});

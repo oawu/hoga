@@ -1,0 +1,31 @@
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2016 OA Wu Design
+ */
+
+@import "_oa";
+
+#block_1_ {
+  height: 130px;
+  display: inline-block;
+  width: 100%;
+  background-color: rgba(246, 247, 248, 1.00);
+
+  > div {
+    display: inline-block;
+    width: 100%;
+    font-weight: bold;
+
+    &:first-child {
+      color: rgba(192, 13, 44, 1.00);
+      font-size: 30px;
+      margin-top: 30px;
+      text-transform: uppercase;
+    }
+    &:last-child {
+      margin-top: 10px;
+      font-size: 18px;
+      color: rgba(17, 18, 19, 1.00);
+    }
+  }
+}

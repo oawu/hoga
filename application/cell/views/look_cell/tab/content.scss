@@ -1,0 +1,91 @@
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2016 OA Wu Design
+ */
+
+@import "_oa";
+
+#tab_ {
+  background-color: rgba(251, 252, 253, 1.00);
+
+  div {
+    display: inline-block;
+    width: $mainWidth + 30px * 2;
+    
+    .t {
+      @include clearfix();
+      
+      a {
+        position: relative;
+        display: inline-block;
+        float: left;
+        width: calc(100% / 4);
+        padding: 20px 5px;
+        font-size: 16px;
+        font-weight: bold;
+        color: rgba(142, 143, 144, 1.00);
+        cursor: pointer;
+
+        &:before {
+          content: '';
+          position: absolute;
+          bottom: -1px;
+          left: 0;
+          right: 0;
+          height: 1px;
+          background-color: rgba(241, 242, 243, 1.00);
+        }
+        &:first-child {
+          &:before {
+            left: 30px;
+          }
+        }
+        &:last-child {
+          &:before {
+            right: 30px;
+          }
+        }
+
+        &.a {
+          color: rgba(249, 14, 27, 1.00);
+
+          &:after {
+            background-color: rgba(249, 14, 27, 1.00);
+          }
+        }
+        &:after {
+          content: '';
+          position: absolute;
+          bottom: -1px;
+          left: 30px;
+          width: calc(100% - 30px * 2);
+          height: 2px;
+          background-color: rgba(241, 242, 243, 1.00);
+        }
+      }
+    }
+    .b {
+      margin-top: 10px;
+      @include clearfix();
+      padding: 10px 30px;
+      padding-bottom: 20px;
+
+      span {
+        float: left;
+        width: 100%;
+        padding: 5px;
+        display: none;
+        text-align: left;
+        font-size: 16px;
+        line-height: 28px;
+        color: rgba(193, 41, 60, 1.00);
+        padding-bottom: 20px;
+        border-bottom: 1px solid rgba(241, 242, 243, 1.00);
+
+        &.s {
+          display: inline-block;
+        }
+      }
+    }
+  }
+}

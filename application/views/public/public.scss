@@ -6,18 +6,18 @@
 @import "_oa";
 
 @include font-face("Monaco", font-files("monaco/monaco.ttf", "monaco/monaco.otf"));
-// @include font-face("icomoon", font-files("icomoon/icomoon.eot", "icomoon/icomoon.woff", "icomoon/icomoon.ttf", "icomoon/icomoon.svg"));
-// [class^="icon-"], [class*=" icon-"] {
-//   font-family: 'icomoon', Monaco, "微軟正黑體", "Microsoft JhengHei";
-//   speak: none;
-//   font-style: normal;
-//   font-weight: normal;
-//   font-variant: normal;
-//   text-transform: none;
-//   line-height: 1;
 
-//   @include font-smoothing(antialiased);
-// }
+@include font-face("frame", font-files("frame/frame.eot", "frame/frame.woff", "frame/frame.ttf", "frame/frame.svg"));
+@include font-face("icomoon", font-files("icomoon/icomoon.eot", "icomoon/icomoon.woff", "icomoon/icomoon.ttf", "icomoon/icomoon.svg"));
+[class^="icon-"], [class*=" icon-"], [class^="fi-"], [class*=" fi-"] {
+  font-family: 'frame', "微軟正黑體", "Open sans", "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+  speak: none; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; line-height: 1;
+  @include font-smoothing(antialiased);
+}
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icomoon', "微軟正黑體", "Open sans", "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+}
+.fi-m:before { content: "\e600"; }.fi-h:before { content: "\f601"; }.fi-s:before { content: "\f602"; }.fi-c-r:before { content: "\f603"; }.fi-c-l:before { content: "\f604"; }.fi-sr:before { content: "\f605"; }.fi-a-l:before { content: "\f606"; }.fi-mr:before { content: "\f607"; }
 
 * {
   &, &:after, &:before {
@@ -38,24 +38,75 @@ html {
     margin: 0;
     width: 100%;
     height: 100%;
-    font-size: medium;
-    font-family: Monaco, "微軟正黑體", "Microsoft JhengHei";
+    font-size: 15px;
+    font-family: "微軟正黑體", "Open sans", "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
     background: $mainBackgroundColor $mainBackgroundImage;
-    color: rgba(50, 50, 50, 0.8);
+    color: rgba(55, 55, 55, 1);
 
     @include font-smoothing(antialiased);
-    
+
     #container {
       position: relative;
-      display: block;
       margin: 0 auto;
-      max-width: $mainWidth;
-
-      padding: 0 10px;
-
-      @media screen and (min-width: #{$mainWidth}) {
-        padding: 0;
-      }
+      width: 100%;
     }
   }
 }
+
+a[href^="http://maps.google.com/maps"], a[href^="https://maps.google.com/maps"] {
+  display: none !important;
+}
+
+.gm-style-cc {
+  display: none;
+}
+
+.icon-playlist_add:before {
+    content: "\e01e";
+}
+.icon-images:before {
+    content: "\e60c";
+}
+.icon-user:before {
+    content: "\e610";
+}
+.icon-triangle-up2:before {
+    content: "\e615";
+}
+.icon-triangle-right2:before {
+    content: "\e61a";
+}
+.icon-triangle-left2:before {
+    content: "\e61c";
+}
+.icon-triangle-down2:before {
+    content: "\e61f";
+}
+.icon-3dglasses:before {
+    content: "\e900";
+}
+.icon-note:before {
+    content: "\e901";
+}
+.icon-pencil2:before {
+    content: "\e906";
+}
+.icon-bin:before {
+    content: "\e9ac";
+}
+.icon-menu:before {
+    content: "\e600";
+}
+.icon-rewind:before {
+    content: "\e051";
+}
+.icon-fast-forward:before {
+    content: "\e055";
+}
+.icon-chevron-thin-left:before {
+    content: "\e904";
+}
+.icon-chevron-thin-right:before {
+    content: "\e905";
+}
+

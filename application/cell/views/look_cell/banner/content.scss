@@ -1,0 +1,86 @@
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2016 OA Wu Design
+ */
+
+@import "_oa";
+
+#banner_ {
+  position: relative;
+  overflow: hidden;
+  min-height: 100%;
+  &.transition {
+    img {
+      @include transition(all .3s);
+    }
+  }
+
+  > a {
+    position: absolute;
+    top: 0;
+    display: inline-block;
+    width: 20%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 99;
+    font-size: 70px;
+    color: rgba(255, 255, 255, .800);
+    @include transition(color .3s);
+    
+    &:hover {
+      color: rgba(255, 255, 255, 1.00);
+    }
+    span {
+      &:before {
+        font-weight: normal;
+      }
+    }
+    &:before {
+      content: '';
+      display: inline-block;
+      vertical-align: middle;
+      height: 40%;
+      width: 100%;
+    }
+    &:first-child {
+      left: 0;
+      // &:after {
+      //   content: "\e904";
+      // }
+    }
+    &:last-child {
+      right: 0;
+      // &:after {
+      //   content: "\e905";
+      // }
+    }
+  }
+  > div {
+    position: absolute;
+    left: 0;
+    height: 0;
+    display: inline-block;
+    height: 500px;
+    @include clearfix();
+
+    @for $i from 1 through 50 {
+      &.n#{$i} {
+        width: calc(100% * #{$i});
+        img {
+          width: calc(100% / #{$i});
+
+          @for $j from 1 through 50 {
+            &:nth-child(#{$j}) {
+              left: calc((100% / #{$i}) * #{$j - 2});
+            }
+          }
+        }
+      }
+    }
+    
+    img {
+      position: absolute;
+      top: 0;
+    }
+  }
+}

@@ -5,22 +5,47 @@
  * @copyright   Copyright (c) 2016 OA Wu Design
  */
 
+if (!function_exists ('remove_ckedit_tag')) {
+  function remove_ckedit_tag ($text) {
+    return preg_replace ("/\s+/", " ", preg_replace ("/&#?[a-z0-9]+;/i", "", (trim (strip_tags ($text)))));
+  }
+}
+if (!function_exists ('oa_url_encode')) {
+  function oa_url_encode ($str) {
+    return rawurlencode (preg_replace ('/[\/%]/', ' ', $str));
+  }
+}
+if (!function_exists ('resource_url')) {
+  function resource_url () {
+    $uris = array_filter (func_get_args ());
+    return base_url ($uris);
+  }
+}
+if (!function_exists ('redirect_message')) {
+  function redirect_message ($uri, $datas) {
+    if (class_exists ('Session') && $datas)
+      foreach ($datas as $key => $data)
+        Session::setData ($key, $data, true);
+
+    return redirect ($uri, 'refresh');
+  }
+}
+
 if (!function_exists ('conditions')) {
-  function conditions (&$columns, &$configs, $model_name, $inputs = null) {
+  function conditions (&$columns, &$configs, $inputs = null) {
     $inputs = $inputs === null ? $_GET : $inputs;
+    $qs = $conditions = array ();
 
-    $strings = array_keys (array_filter ($columns, function ($column) { return in_array (strtolower ($column), array ('string', 'str', 'varchar', 'text')); }));
-    $columns = array_filter (array_combine ($columns = array_keys ($columns),array_map (function ($q) use ($inputs) { return isset ($inputs[$q]) ? $inputs[$q] : null; }, $columns)), function ($t) { return is_numeric ($t) ? true : $t; });
-    $conditions = array_slice ($columns, 0);
-    array_walk ($conditions, function (&$v, $k) { $v = $k . '=' . $v; });
-    $q_string = implode ('&amp;', $conditions);
+    foreach ($columns as &$column)
+      if ((isset ($inputs[$column['key']]) && ($inputs[$column['key']] !== '') && (($column['value'] = $inputs[$column['key']]) || (is_numeric ($column['value']) ? ($column['value'] = (int)$column['value']) || true : true))) || ($column['value'] = ''))
+        if (array_push ($qs, array ($column['key'], $column['value'])))
+          OaModel::addConditions ($conditions, $column['sql'], strpos (strtolower ($column['sql']), ' like ') !== false ? '%' . $column['value'] . '%' : $inputs[$column['key']]);
 
-    $conditions = array_slice ($columns, 0);
-    array_walk ($conditions, function (&$v, $k) use ($strings, $model_name) { $v = in_array ($k, $strings) ? ($k . ' LIKE ' . $model_name::escape ('%' . $v . '%')) : ($k . ' = ' . $model_name::escape ($v)); });
+    $qs = implode ('&amp;', array_map (function ($q) { return $q[0] . '=' . $q[1]; }, $qs));
 
     $configs = array (
         'uri_segment' => count ($configs),
-        'base_url' => base_url (array_merge ($configs, array ($q_string ? '?' . $q_string : '')))
+        'base_url' => base_url (array_merge ($configs, array ($qs ? '?' . $qs : '')))
       );
     return $conditions;
   }

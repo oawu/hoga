@@ -1,13 +1,22 @@
 /**
  * @author      OA Wu <comdan66@gmail.com>
- * @copyright   Copyright (c) 2016 OA Wu Design
+ * @copyright   Copyright (c) 2015 OA Wu Design
  */
 
-$mainWidth: 1200px !global;
+$mainWidth: 1000px !global;
 
 $mediaMiniMobileWidth: 384px !global;
 $mediaMobileWidth: 640px !global;
 $mediaTabletWidth: 960px !global;
+
+$navHeight: 60px !global;
+$navMobileHeight: 50px !global;
+$wrapperLeftWidth: 230px !global;
+$wrapperLeftMobileWidth: 230px !global;
+$msgHeight: 45px !global;
+$msgMobileHeight: 40px !global;
+$tabHeight: 45px !global;
+$tabMobileHeight: 40px !global;
 
 $mainBackgroundColor: rgba(255, 255, 255, 1) !global;
 $mainBackgroundImage: image-url('bg/grunge.png', false, false) !global;
@@ -32,5 +41,8 @@ $btns: (
   'brown': (121, 85, 72),
   'gray': (158, 158, 158),
   'blue-gray': (96, 125, 139),
-  'white': (200, 200, 200)
+  'white': (200, 200, 200),
+  'mazu': (174, 48, 41),
+  'mazu2': (206, 83, 65),
+  'x': (23, 39, 57)
 ) !global;

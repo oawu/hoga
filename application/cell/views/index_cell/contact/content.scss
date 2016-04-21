@@ -1,0 +1,115 @@
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2016 OA Wu Design
+ */
+
+@import "_oa";
+
+#contact_ {
+  padding-top: 50px;
+  text-align: center;
+  // color: rgba(254, 255, 255, 1.00);
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 30px;
+  margin-bottom: 20px;
+
+  > form {
+    margin: 0 auto;
+    width: $mainWidth;
+    text-align: left;
+    padding-top: 10px;
+
+    header {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 65px;
+        left: 75px;
+
+        width: 110px;
+        height: 1px;
+        background-color: rgba(17, 18, 19, 1.00);
+        @include rotate(-45deg);
+      }
+      div {
+        position: absolute;
+        left: 180px;
+        top: 20px;
+        display: inline-block;
+        p {
+          margin: 10px;
+          font-weight: bold;
+          b {
+            color: red;
+          }
+        }
+      }
+      h2 {
+        position: relative;
+        font-size: 32px;
+        margin: 20px 0;
+        padding: 0;
+
+        &:before {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: -9px;
+          display: inline-block;
+          width: 60px;
+          height: 4px;
+          background-color: rgba(236, 122, 33, 1.00);
+        }
+      }
+    }
+
+    > div {
+      margin-top: 60px;
+      @include clearfix();
+
+      &:last-child {
+        text-align: center;
+
+        button {
+          @include button('x');
+          background-color: rgba(23, 39, 57, 1.00);
+          margin: 0 auto;
+          font-size: 30px;
+          width: 300px;
+          float: none;
+        }
+      }
+
+      > * {
+        float: left;
+        display: inline-block;
+        width: 50%;
+      }
+      > div {
+        padding-right: 10px;
+
+        input {
+          @include input;
+          width: 100%;
+          font-size: 14px;
+          height: 35px;
+          
+          + input {
+            margin-top: 10px;
+          }
+        }
+      }
+      > textarea {
+        @include textarea;
+        margin-left: 10px;
+        width: calc(50% - 10px);
+        height: 171px;
+      }
+    }
+  }
+}

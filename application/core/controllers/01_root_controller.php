@@ -31,6 +31,7 @@ class Root_controller extends CI_Controller {
     $this->load->library ('cfg');
     $this->load->library ('session');
     $this->load->library ('OAInput');
+    $this->load->library ('Fb');
 
     $this->set_controllers_path ('application', 'controllers')
          ->set_libraries_path ('application', 'libraries')

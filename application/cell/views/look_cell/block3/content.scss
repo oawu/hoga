@@ -1,0 +1,60 @@
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2016 OA Wu Design
+ */
+
+@import "_oa";
+
+#block_3_ {
+  background-color: rgba(243, 243, 244, 1.00);
+  padding-bottom: 0;
+
+  > div {
+    display: inline-block;
+    width: $mainWidth;
+
+    .top {
+      @include split-left(400px);
+
+      .l {
+        background-color: rgba(183, 183, 183, 1.00);
+      }
+      .r {
+        position: relative;
+        background-color: rgba(145, 146, 147, 1.00);
+        
+        &:after {
+          content: "Look腳鏈機制";
+          position: absolute;
+          left: 90px;
+          top: 28px;
+          font-size: 25px;
+          color: rgba(254, 255, 255, 1.00);
+          font-weight: bold;
+        }
+      }
+    }
+    .bottom {
+      @include split-left(400px);
+      .l {
+        background-color: rgba(255, 255, 255, 1.00);
+      }
+      .r {
+        padding: 20px;
+      
+        span {
+          display: inline-block;
+          width: 100%;
+          font-size: 16px;
+          line-height: 28px;
+          margin-top: 20px;
+          
+          + span {
+            margin-top: 30px;
+          }
+          text-align: left;
+        }
+      }
+    }
+  }
+}

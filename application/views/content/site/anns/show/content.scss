@@ -1,0 +1,116 @@
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2016 OA Wu Design
+ */
+
+@import "_oa";
+
+body {
+  position: relative;
+  background-color: rgba(247, 248, 249, 1.00) !important;
+  
+  img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: inline-block;
+    width: 100%;
+    z-index: -1;
+  }
+  h1 {
+    position: relative;
+    margin-top: 100px;
+    margin-bottom: 15px;
+    font-size: 30px;
+    color: rgba(19, 39, 56, 1.00);
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: calc(50% - 70px / 2);
+      bottom: -10px;
+      display: inline-block;
+      width: 70px;
+      height: 3px;
+      background-color: rgba(233, 123, 33, 1.00);
+    }
+  }
+  h2 {
+    color: rgba(19, 39, 56, 1.00);
+    font-size: 16px;
+    margin-top: 20px;
+  }
+}
+
+#ann {
+  display: inline-block;
+  width: $mainWidth;
+  margin: 50px auto;
+  background-color: rgba(251, 252, 253, 1.00);
+  text-align: left;
+  padding: 20px 40px;
+
+  header {
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(39, 40, 34, .40);
+    h2 {
+      color: rgba(22, 34, 48, 1.00);
+      margin: 10px 0;
+      font-size: 20px;
+      @include transition(color .3s);
+    }
+    span {
+      color: rgba(143, 144, 145, 1.00);
+    }
+  }
+  article {
+    margin: 15px 0;
+    font-size: 15px;
+    line-height: 20px;
+    color: rgba(128, 129, 130, 1.00);
+  }
+}
+#bottom {
+  background-color: rgba(251, 252, 253, 1.00);
+  > div {
+    display: inline-block;
+    width: $mainWidth;
+    padding: 15px;
+    @include clearfix();
+
+    a {
+      @include a(0, false, rgba(26, 26, 27, .90), rgba(26, 26, 27, 1.00));
+      &.n, &.p {
+        line-height: 22px;
+        margin-top: 12px;
+
+        &:after, &:before {
+          font-size: 21px;
+          display: inline-block;
+          color: rgba(170, 171, 172, 1.00);
+          font-family: 'icomoon', "微軟正黑體", "Open sans", "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+        }
+      }
+      &.n {
+        float: right;
+        &:after {
+          content: "\e055";
+        }
+      }
+      &.p {
+        float: left;
+        &:before {
+          content: "\e051";
+        }
+      }
+      &.a {
+        float: center;
+        &:before {
+          display: block;
+          font-size: 30px;
+          color: rgba(170, 171, 172, 1.00);
+        }
+      }
+    }
+  }
+}

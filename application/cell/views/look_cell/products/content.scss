@@ -1,0 +1,196 @@
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2016 OA Wu Design
+ */
+
+@import "_oa";
+
+#product_ {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 60px;
+
+
+  > div {
+    display: inline-block;
+    width: $mainWidth;
+
+    .t {
+      position: relative;
+      margin-top: 40px;
+      margin-bottom: 20px;
+      padding: 10px;
+      img {
+        position: absolute;
+        left: calc((100% - 133px) / 2);
+        top: calc((100% - 71px) / 2);
+        display: inline-block !important;
+        width: 133px;
+        height: 71px;
+      }
+      span {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        font-weight: bold;
+
+        &:nth-child(2) {
+          font-size: 30px;
+          color: rgba(185, 17, 47, 1.00);
+        }
+        &:nth-child(3) {
+          font-size: 15px;
+
+        }
+      }
+    }
+    .d {
+      margin-top: 20px;
+      display: inline-block;
+      width: 100%;
+
+      div {
+        display: inline-block;
+        @include clearfix();
+        
+        a {
+          display: inline-block;
+          width: 10px;
+          height: 10px;
+          float: left;
+          background-color: rgba(220, 221, 222, 1.00);
+          margin: 5px;
+          cursor: pointer;
+          @include border-radius(50%);
+          
+          &.a {
+            background-color: rgba(194, 81, 82, 1.00);
+          }
+        }
+      }
+    }
+    .p {
+      @include clearfix();
+      display: inline-block;
+      width: 100%;
+      margin-top: 20px;
+
+      > div {
+        float: left;
+        display: inline-block;
+        width: calc((100% / 4) - 10px * 2);
+        margin: 10px;
+        text-align: left;
+        height: 265px;
+
+        img {
+          width: 100%;
+          height: 150px;
+          border: 1px solid rgba(223, 224, 225, 1.00);
+        }
+        div {
+          margin-top: 10px;
+          padding: 5px 12px;
+          border-left: 2px solid rgba(247, 13, 27, 1.00);
+          
+          span {
+            font-size: 16px;
+            display: inline-block;
+            width: 100%;
+            &:first-child {
+              color: rgba(83, 84, 85, 1.00);
+              font-size: 20px;
+            }
+            &:last-child {
+              margin-top: 5px;
+              color: rgba(126, 127, 128, 1.00);
+              font-size: 13px;
+            }
+          }
+        }
+        a {
+          display: inline-block;
+          width: 100%;
+          padding: 10px;
+          margin-top: 10px;
+          text-align: center;
+          font-weight: bold;
+          background-color: rgba(191, 80, 82, 1.00);
+          color: rgba(254, 255, 255, 1.00);
+          border: 1px solid rgba(254, 255, 255, 1.00);
+          cursor: pointer;
+          @include transition(all .3s);
+
+          &:hover {
+            border: 1px solid rgba(198, 114, 114, 1.00);
+            color: rgba(198, 114, 114, 1.00);
+            background-color: rgba(254, 255, 255, 1.00);
+          }
+        }
+      }
+    }
+  }
+}
+
+#_product {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(39, 40, 34, .70);
+  z-index: 9999;
+  overflow: auto;
+  padding-bottom: 50px;
+
+  &.s {
+    display: inline-block;
+  }
+
+  > div {
+    display: inline-block;
+    width: $mainWidth;
+
+    .top {
+      display: inline-block;
+      width: 100%;
+      margin-top: 50px;
+      @include split-right(100px);
+      .l {
+        text-align: left;
+        @include clearfix();
+        
+        a {
+          float: left;
+          margin: 5px;
+        }
+      }
+      .r {
+        text-align: right;
+        a {
+          width: 40px;
+          height: 40px;
+          line-height: 38px;
+          border: 1px solid rgba(231, 232, 233, 1.00);
+          text-align: center;
+          @include border-radius(50%);
+        }
+      }
+      a {
+        @include a(0, false, rgba(255, 255, 255, .7500), rgba(255, 255, 255, 1.00));
+        font-size: 30px;
+        cursor: pointer;
+      }
+    }
+    .center {
+      padding: 10px;
+      background-color: rgba(232, 232, 233, 1.00);
+      margin-top: 10px;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}

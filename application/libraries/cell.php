@@ -132,8 +132,8 @@ class Cell_Controller {
     $this->CI =& get_instance ();
     $this->CI->load->library ("cfg");
     $this->configs = array_merge (Cfg::system ('cell'), $configs);
-    $this->setUseJsList (false);
-    $this->setUseCssList (false);
+    $this->setUseJsList (true);
+    $this->setUseCssList (true);
   }
 
   public function add_js ($path, $is_minify = true) {

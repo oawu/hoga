@@ -1,0 +1,184 @@
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2016 OA Wu Design
+ */
+
+@import "_oa";
+
+#press_ {
+  display: inline-block;
+  height: 600px;
+  width: 100%;
+
+  > div {
+    display: inline-block;
+    width: $mainWidth;
+
+    .t {
+      position: relative;
+      margin-top: 40px;
+      margin-bottom: 20px;
+      padding: 10px;
+      img {
+        position: absolute;
+        left: calc((100% - 133px) / 2);
+        top: calc((100% - 71px) / 2);
+        display: inline-block !important;
+        width: 133px;
+        height: 71px;
+      }
+      span {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        font-weight: bold;
+        color: rgba(255, 251, 251, 1.00);
+        &:nth-child(2) {
+          font-size: 30px;
+        }
+        &:nth-child(3) {
+          font-size: 15px;
+
+        }
+      }
+    }
+    .y {
+      position: relative;
+      margin-top: 60px;
+      @include clearfix();
+
+      a {
+        float: left;
+        position: relative;
+        display: inline-block !important;
+        width: 100px !important;
+        height: 32px !important;
+        line-height: 32px;
+        @include border-radius(16px);
+        background-color: rgba(254, 255, 255, 1.00);
+        border: 1px solid rgba(254, 255, 255, 1.00);
+        font-size: 17px;
+        color: rgba(178, 26, 29, 1.00);
+        margin: 5px;
+        z-index: 2;
+        cursor: pointer;
+
+        &.a {
+          background-color: rgba(191, 80, 82, 1.00);
+          border: 1px solid rgba(191, 80, 82, 1.00);
+          color: rgba(254, 255, 255, 1.00);
+        }
+      }
+      &:before {
+        content: '';
+        position: absolute;
+        top: calc(50% - 1px);
+        left: 10px;
+        right: 0;
+        height: 2px;
+        background-color: rgba(254, 255, 255, 1.00);
+        z-index: 1;
+      }
+    }
+    .p {
+      display: inline-block;
+      width: 100%;
+      margin-top: 30px;
+      @include clearfix();
+      
+      > div {
+        float: left;
+        width: calc(100% / 4 - 20px);
+        margin: 10px;
+
+        img {
+          width: 100%;
+          height: 230px;
+          display: inline-block !important;
+        }
+        a {
+          display: inline-block;
+          width: 100%;
+          padding: 5px 10px;
+          margin-top: 10px;
+          text-align: center;
+          font-weight: bold;
+          background-color: rgba(168, 36, 34, 1.00);
+          color: rgba(254, 255, 255, 1.00);
+          border: 2px solid rgba(168, 36, 34, 1.00);
+          cursor: pointer;
+          font-size: 15px;
+          @include transition(all .3s);
+
+          &:hover {
+            border: 2px solid rgba(254, 255, 255, 1.00);
+            background-color: transparent;
+          }
+        }
+      }
+    }
+  }
+}
+
+#_press {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(39, 40, 34, .70);
+  z-index: 9999;
+  overflow: auto;
+  padding-bottom: 50px;
+
+  &.s {
+    display: inline-block;
+  }
+
+  > div {
+    display: inline-block;
+    width: $mainWidth;
+
+    .top {
+      display: inline-block;
+      width: 100%;
+      margin-top: 50px;
+      @include split-right(100px);
+      .l {
+        text-align: left;
+        @include clearfix();
+        
+        a {
+          float: left;
+          margin: 5px;
+        }
+      }
+      .r {
+        text-align: right;
+        a {
+          width: 40px;
+          height: 40px;
+          line-height: 38px;
+          border: 1px solid rgba(231, 232, 233, 1.00);
+          text-align: center;
+          @include border-radius(50%);
+        }
+      }
+      a {
+        @include a(0, false, rgba(255, 255, 255, .7500), rgba(255, 255, 255, 1.00));
+        font-size: 30px;
+        cursor: pointer;
+      }
+    }
+    .center {
+      padding: 10px;
+      background-color: rgba(232, 232, 233, 1.00);
+      margin-top: 10px;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}

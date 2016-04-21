@@ -4,9 +4,537 @@
  */
 
 @import "_oa";
-
-html {
-  body {
-
+$mainWidth: 1400px;
+$mobileHorizontalPadding: 10px;
+$mobileVerticalPadding: 15px;
+nav {
+  > div {
+    width: $mainWidth !important;
   }
+}
+
+#container {
+  @media screen and (min-width: 0px) and (max-width: #{$mediaTabletWidth - 1px}) {
+    display: block;
+  }
+  @media screen and (min-width: $mediaTabletWidth) {
+    display: table;
+    min-height: 100%;
+  }
+  max-width: $mainWidth;
+
+  &.show {
+    > div {
+      > div:last-child {
+        right: 0;
+        @include opacity(1);
+      }
+    }
+  }
+
+  > div {
+    position: relative;
+    @media screen and (min-width: 0px) and (max-width: #{$mediaTabletWidth - 1px}) {
+      display: block;
+    }
+    @media screen and (min-width: $mediaTabletWidth) {
+      display: table-row;
+    }
+
+    > div {
+      &:nth-child(1) {
+        > div:not(:first-child) {
+          @media screen and (min-width: $mainWidth) {
+            border-left: 1px solid rgba(39, 40, 34, .2);
+            @include border-left-radius(3px);
+            @include box-shadow(-1px 1px 5px rgba(39, 40, 34, .1));
+          }
+        }
+      }
+      &:nth-child(2) {
+        position: relative;
+        background-color: rgba(255, 255, 255, 1);
+        border-bottom: 1px solid rgba(39, 40, 34, .25);
+        overflow: hidden;
+        font-size: 13px;
+        @include box-shadow(0 0 3px 1px rgba(39, 40, 34, .2));
+        display: table-cell;
+
+        @media screen and (min-width: 0px) and (max-width: #{$mediaTabletWidth - 1px}) {
+          display: block;
+          width: 100%;
+          min-height: 400px;
+          word-break: break-all;
+          border-top: 0;
+          border-left: 0;
+          border-right: 0;
+          padding: $mobileVerticalPadding $mobileHorizontalPadding;
+          padding-top: $navMobileHeight + $mobileVerticalPadding;
+        }
+        @media screen and (min-width: $mediaTabletWidth) {
+          z-index: 995;
+          // border-left: 1px solid rgba(39, 40, 34, .25);
+          padding: 20px;
+          padding-top: $navHeight + 20px;
+          @include box-shadow(0 0 10px 1px rgba(39, 40, 34, .2), -1px 0 1px rgba(39, 40, 34, .15));
+          @include border-bottom-left-radius(3px);
+        }
+        @media screen and (min-width: #{$mainWidth + 40px}) {
+          @include border-bottom-right-radius(3px);
+          border-right: 1px solid rgba(39, 40, 34, .25);
+        }
+      }
+      &:last-child {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(39, 40, 34, .5);
+        z-index: 999998;
+        @include opacity(0);
+        @include transition(all .3s);
+
+        @media screen and (min-width: $mediaTabletWidth) {
+          width: 0;
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+#loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  @include loading();
+  display: none;
+}
+form.search {
+  @include clearfix();
+  $submitWidth: 60px;
+  $newWidth: 60px;
+  position: relative;
+
+  @media screen and (min-width: 0px) and (max-width: #{$mediaMobileWidth - 1px}) {
+    display: none;
+    &.show {
+      display: block;
+    }
+  }
+  .l, > button[type='submit'], > a {
+    display: inline-block;
+    float: left;
+    width: calc(100% / 3);
+  }
+  .l {
+    width: calc(100% - #{$submitWidth});
+    @media screen and (min-width: 0px) and (max-width: #{$mediaMobileWidth - 1px}) {
+      width: 100%;
+    }
+    text-align: left;
+
+    @for $i from 1 through 10 {
+      &.n#{$i} {
+        @media screen and (min-width: #{$mediaMobileWidth}) {
+          width: calc(100% - #{$submitWidth + ($newWidth + 10px) * $i});
+        }
+        ~ a {
+          display: inline-block;
+        }
+      }
+    }
+    select {
+      float: left;
+      margin: 0;
+      height: 30px;
+    }
+    input {
+      float: left;
+      @include input();
+      margin: 0;
+    }
+    @media screen and (min-width: 0px) and (max-width: #{$mediaMobileWidth - 1px}) {
+      input, select {
+        width: 100%;
+        &:not(:first-child) {
+          margin-top: 5px;
+        }
+      }
+    }
+    @media screen and (min-width: #{$mediaMobileWidth}) {
+      @for $i from 1 through 10 {
+        &.i#{$i} {
+          input, select {
+            width: calc((100% / #{$i}) - 7px);
+            &:not(:nth-child(#{$i}n + 1)) {
+              margin-left: 5px;
+            }
+            &:not(:nth-child(-n + #{$i})) {
+              margin-top: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+  > button[type='submit'] {
+    width: $submitWidth;
+    @include button('blue-gray');
+    font-weight: normal;
+    height: 30px;
+    @media screen and (min-width: 0px) and (max-width: #{$mediaMobileWidth - 1px}) {
+      width: 100%;
+      margin-top: 5px;
+    }
+  }
+  > a {
+    @include button();
+    font-weight: normal;
+    width: $newWidth;
+    margin-left: 10px;
+    display: none;
+    height: 30px;
+    line-height: 17px;
+    @media screen and (min-width: 0px) and (max-width: #{$mediaMobileWidth - 1px}) {
+      width: 100%;
+      margin-left: 0;
+      margin-top: 5px;
+    }
+  }
+  ~ button {
+    @include button('indigo');
+    font-weight: normal;
+    @media screen and (min-width: #{$mediaMobileWidth}) {
+      display: none;
+    }
+    width: 100%;
+    margin-top: 5px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+
+    &:before {
+      display: inline-block;
+      @include transform(rotate(90deg));
+    }
+  }
+}
+
+table.table-list-rwd {
+  @include material-table-list;
+  margin-top: 20px;
+  .sort {
+    a {
+      display: block;
+      cursor: pointer;
+    }
+  }
+  
+  .index_checkbox {
+    @include checkbox('mazu2');
+    cursor: pointer;
+
+    input {
+      &[disabled] {
+        ~ div {
+          cursor: not-allowed;
+        } 
+      }
+    }
+    > div {
+      display: inline-block;
+      margin-left: 3px;
+    }
+  }
+
+  @for $i from 1 through 10 {
+    .i_#{$i * 10} {
+      width: $i * 10px;
+      @include box-shadow(0 0 1px rgba(0, 0, 0, .2), 0 0 1px rgba(0, 0, 0, .2));
+      @include border-radius(2px);
+      @include transition(all .3s);
+
+      &:hover {
+        @include box-shadow(0 0 5px rgba(0, 0, 0, .3), 0 0 1px rgba(0, 0, 0, .3));
+      }
+    }
+    .ih_#{$i * 10} {
+      height: $i * 10px;
+      @include border-radius(2px);
+      @include transition(all .3s);
+
+      &:hover {
+        @include box-shadow(0 0 5px rgba(0, 0, 0, .3), 0 0 1px rgba(0, 0, 0, .3));
+      }
+    }
+  }
+  a {
+    @include a;
+    font-size: 13px;
+
+    &[class*="icon-"] {
+      font-size: 18px;
+    }
+  }
+}
+
+table.table-form {
+  @include material-table-form(100px);
+
+  tbody tr th {
+  }
+  tbody tr td {
+
+    &.k {
+      @include split-right(30px, 'input:first-child', 'div');
+      input:first-child {
+        width: calc(100% - 35px) !important;
+      }
+      div {
+        text-align: center;
+        float: right;
+        margin-top: 7px;
+        color: rgba(137, 138, 135, 1);
+        border-left: 1px solid rgba(39, 40, 34, .1);
+        cursor: pointer;
+        @include transition(all .3s);
+        
+        &:hover {
+          color: rgba(97, 98, 95, 1);
+        }
+      }
+    }
+
+    .ma, .m {
+      + .ma, + .m {
+        margin-top: 5px;
+      }
+      @include clearfix();
+
+      input[type="text"] {
+        float: left;
+        &:nth-child(2) {
+          width: calc(((100% - 60px) / 10) * 3 - 5px - 15px);
+        }
+        &:nth-child(3) {
+          width: calc(((100% - 60px) / 10) * 7 - 5px - 15px);
+        }
+        margin-right: 10px;
+      }
+      div {
+        float: left;
+        width: 20px;
+        margin-right: 10px;
+
+        a {
+          @include a;
+          cursor: pointer;
+          display: block;
+          text-align: center;
+          width: 100%;
+          + a {
+            margin-top: 3px;
+          }
+        }
+      }
+      button {
+        float: right;
+        width: 50px;
+        @include button('mazu2');
+        font-weight: normal;
+      }
+    }
+
+    .cover {
+      height: 100px;
+      width: 100px;
+      display: block;
+      border: 1px solid rgba(190, 191, 189, 1);
+      @include border-radius(2px);
+      margin-bottom: 10px;
+    }
+    &[colspan] {
+      text-align: right;
+      padding-top: 10px;
+
+      button {
+        @include button('mazu');
+        padding: 5px 15px;
+      }
+      a {
+        @include a(1px, true);
+        font-size: 15px;
+        margin-top: 6px;
+        margin-right: 10px;
+      }
+    }
+
+    textarea.pure {
+      @include material-textarea;
+    }
+    textarea {
+      &[class*="cke"] {
+        &, &:after, &:before, *, *:after, *:before {
+          @include box-sizing(content-box);
+        }
+      }
+    }
+
+    input[type='text'], input[type='number'], input[type='file'] {
+      @include material-input;
+    }
+    input[type='file'] {
+      border-bottom: 0;
+    }
+
+
+    label {
+      position: relative;
+      display: inline-block;
+
+      input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        @include opacity(0);
+
+        + * {
+          z-index: 2;
+          display: inline-block;
+          cursor: pointer;
+          padding: 3px;
+          font-size: 14px;
+          line-height: 20px;
+          height: 24px;
+        }
+        &[type='checkbox'] {
+          &:checked {
+            + * {
+              display: inline-block;
+              &:before {
+                color: rgba(203, 78, 64, 1);
+              }
+            }
+          }
+          + * {
+            display: inline-block;
+            &:before {
+              content: "\e624";
+              color: rgba(255, 255, 255, 1);
+              width: 18px;
+              height: 18px;
+              line-height: 16px;
+              display: inline-block;
+              font-family: 'icomoon', "微軟正黑體", "Open sans", "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+              border: 1px solid rgba(39, 39, 34, .3);
+              margin-right: 3px;
+              text-align: center;
+              @include border-radius(2px);
+              @include transition(color .3s);
+            }
+          }
+        }
+
+        &[type='radio'] {
+          &:checked {
+            + * {
+              &:after {
+                border: 1px solid rgba(160, 65, 55, 1);
+                background-color: rgba(203, 78, 64, 1);
+              }
+            }
+          }
+          + * {
+            &:after {
+              position: absolute;
+              top: 7px;
+              left: 7px;
+              content: "";
+              display: inline-block;
+              width: 10px;
+              height: 10px;
+              border: 1px solid rgba(160, 65, 55, 0);
+              background-color: rgba(203, 78, 64, 0);
+              @include border-radius(50%);
+              @include transition(all .3s);
+            }
+            &:before {
+              content: '';
+              width: 18px;
+              height: 18px;
+              line-height: 16px;
+              display: inline-block;
+              font-family: 'icomoon', "微軟正黑體", "Open sans", "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+              border: 1px solid rgba(39, 39, 34, .5);
+              margin-right: 3px;
+              text-align: center;
+              @include border-radius(50%);
+            }
+          }
+        }
+
+        &[disabled] {
+          cursor: not-allowed;
+
+          + * {
+            cursor: not-allowed;
+            @include opacity(.75);
+          }
+        }
+      }
+    }
+  }
+}
+._m {
+  @include alert('info');
+  position: absolute;
+  left: 0;
+  display: inline-block;
+  width: 100%;
+  padding: 10px;
+  border-right: 0;
+  border-left: 0;
+  background-color: rgba(217, 237, 247, .65);
+  z-index: 9997;
+
+  @include background-image(radial-gradient(50% 50%, rgba(217, 237, 247, 1) 0px, rgba(255, 255, 255, 0) 100%));
+  background-repeat: no-repeat;
+  background-position: 50% 5px;
+
+  @include border-radius(0);
+  @include opacity(0);
+  
+  @media screen and (min-width: 0px) and (max-width: #{$mediaTabletWidth - 1px}) {
+    top: -$msgMobileHeight;
+    height: $msgMobileHeight;
+    
+    @include animation(_m_m_s 5s);
+    @include keyframes(_m_m_s){
+      0% { top: -$msgMobileHeight; @include opacity(0); }
+      5% { top: -$msgMobileHeight; @include opacity(0); }
+      15% { top: $navMobileHeight; @include opacity(1); }
+      90% { top: $navMobileHeight; @include opacity(1); }
+      100% { top: -$msgMobileHeight; @include opacity(0); }
+    }
+  }
+  @media screen and (min-width: #{$mediaTabletWidth}) {
+    top: -$msgHeight;
+    height: $msgHeight;
+
+    @include animation(_m_t_s 5s);
+    @include keyframes(_m_t_s){
+      0% { top: -$msgHeight; @include opacity(0); }
+      5% { top: -$msgHeight; @include opacity(0); }
+      15% { top: $navHeight; @include opacity(1); }
+      90% { top: $navHeight; @include opacity(1); }
+      100% { top: -$msgHeight; @include opacity(0); }
+    }
+  }
+}
+.cke_combo__fontsize .cke_combo_text {
+  width: auto !important;
 }

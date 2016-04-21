@@ -1,0 +1,147 @@
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2016 OA Wu Design
+ */
+
+@import "_oa";
+
+#main_ {
+  padding-top: 50px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  > img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: inline-block;
+    width: 100%;
+    z-index: -1;
+  }
+  > div {
+    margin: 0 auto;
+    width: $mainWidth;
+    text-align: left;
+    @include split-left(400px);
+
+    > * {
+      header {
+        font-size: 13px;
+        margin-bottom: 35px;
+
+        h2 {
+          position: relative;
+          font-size: 22px;
+          margin: 0;
+          margin-bottom: 5px;
+          padding: 5px 0;
+          border-bottom: 1px solid rgba(240, 119, 23, 1.00);
+          
+          &:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            display: inline-block;
+            width: 100px;
+            height: 3px;
+            background-color: rgba(240, 119, 23, 1.00);
+          }
+        }
+      }
+    }
+    .l {
+      padding-right: 15px;
+      a {
+        @include a(0, false, rgba(55, 55, 55, 1), rgba(55, 55, 55, 1));
+        width: 100%;
+        + a {
+          margin-top: 20px;
+          padding-top: 20px;
+          border-top: 1px solid rgba(177, 178, 179, 1.00);
+        }
+        div {
+          &:first-child {
+            font-size: 15px;
+            color: rgba(34, 43, 52, 1.00);
+            line-height: 20px;
+            height: 42px;
+            overflow: hidden;
+          }
+          &:last-child {
+            font-size: 13px;
+            color: rgba(162, 163, 164, 1.00);
+            margin-top: 10px;
+          }
+        }
+        &:last-child {
+          text-align: center;
+          padding-top: 25px;
+          
+          span {
+            display: inline-block;
+            padding: 15px;
+            padding-top: 18px;
+            padding-bottom: 10px;
+            width: 200px;
+            font-size: 17px;
+            background-color: rgba(227, 228, 229, 1.00);
+            border-bottom: 3px solid rgba(234, 106, 0, 0);
+            color: rgba(22, 35, 50, 1.00);
+            @include transition(all .3s);
+          }
+
+          &:hover {
+            span {
+              border-bottom: 3px solid rgba(234, 106, 0, 1);
+            }
+          }
+        }
+      }
+    }
+    .r {
+      padding-left: 15px;
+
+      > div {
+        @include split-left(319px, 'img', '.rr');
+        height: 195px;
+        background-color: rgba(248, 248, 249, 1.00);
+        + div {
+          margin-top: 25px;
+        }
+
+        .rr {
+          padding: 10px;
+          position: relative;
+          height: 195px;
+
+          h3 {
+            margin: 0;
+            color: rgba(234, 125, 33, 1.00);
+            font-size: 22px;
+            padding: 7px;
+          }
+          div {
+            padding: 7px;
+            padding-top: 3px;
+
+            height: 75px;
+            line-height: 18px;
+            overflow: hidden;
+          }
+          a {
+            position: absolute;
+            bottom: 15px;
+
+            @include a(0, false, rgba(52, 65, 71, .90), rgba(52, 65, 71, 1.00));
+            width: calc(100% - 10px * 2);
+            border: 1px solid rgba(24, 38, 62, 1.00);
+            text-align: center;
+            padding: 10px 5px;
+          }
+        }
+      }
+    }
+  }
+}

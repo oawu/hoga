@@ -1,0 +1,18 @@
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2016 OA Wu Design
+ */
+
+@import "_oa";
+
+#video_ {
+  display: inline-block;
+  width: 100%;
+  height: 470px;
+  overflow: hidden;
+
+  iframe {
+    // height: 600px;
+    height: 100%;
+  }
+}

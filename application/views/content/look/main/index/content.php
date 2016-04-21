@@ -1,0 +1,13 @@
+<?php echo render_cell ('look_cell', 'banner');?>
+<?php echo render_cell ('look_cell', 'header');?>
+<?php echo render_cell ('look_cell', 'block1');?>
+<?php echo render_cell ('look_cell', 'block2');?>
+<?php echo render_cell ('look_cell', 'video');?>
+<?php echo render_cell ('look_cell', 'features');?>
+<?php echo render_cell ('look_cell', 'block3');?>
+<?php echo render_cell ('look_cell', 'tab');?>
+<?php echo render_cell ('look_cell', 'products');?>
+<?php echo render_cell ('look_cell', 'press');?>
+<?php echo render_cell ('look_cell', 'more');?>
+<?php echo render_cell ('look_cell', 'footer');?>
+<?php echo render_cell ('look_cell', 'up');?>

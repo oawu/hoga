@@ -1,0 +1,141 @@
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2016 OA Wu Design
+ */
+
+@import "_oa";
+
+#about_ {
+  margin-top: 50px;
+  text-align: center;
+  color: rgba(254, 255, 255, 1.00);
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 50px;
+
+  > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    width: 100%;
+    min-height: 555px;;
+    z-index: -1;
+  }
+  > div {
+    margin: 0 auto;
+    width: $mainWidth;
+    text-align: left;
+    padding-top: 10px;
+
+    header {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 70px;
+        left: 55px;
+
+        width: 110px;
+        height: 1px;
+        background-color: rgba(255, 255, 255, .70);
+        @include rotate(-45deg);
+      }
+      h2 {
+        position: relative;
+        font-size: 32px;
+        margin: 20px 0;
+        padding: 0;
+
+        &:before {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: -9px;
+          display: inline-block;
+          width: 60px;
+          height: 4px;
+          background-color: rgba(236, 122, 33, 1.00);
+        }
+      }
+    }
+
+    .t {
+      margin-top: 70px;
+      @include clearfix();
+      a {
+        float: left;
+        width: 50%;
+        display: inline-block;
+        text-align: center;
+        padding: 10px;
+        font-size: 20px;
+        cursor: pointer;
+        border: 1px solid rgba(254, 255, 255, 1.00);
+
+        &:first-child {
+          border-right: 0;
+          @include border-top-left-radius(5px);
+          @include border-bottom-left-radius(5px);
+        }
+        &:last-child {
+          border-left: 0;
+          @include border-top-right-radius(5px);
+          @include border-bottom-right-radius(5px);
+        }
+
+        &.a {
+          position: relative;
+          background-color: rgba(236, 122, 33, 1.00);
+          color: rgba(0, 1, 11, 1.00);
+          border-color: rgba(236, 122, 33, 1.00);
+
+          &:after {
+            top: 100%;
+            left: 50%;
+            border: solid transparent;
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none;
+            border-color: transparent;
+            border-top-color: rgba(236, 122, 33, 1.00);
+            border-width: 10px;
+            margin-left: -10px;
+          }
+        }
+      }
+    }
+    .c {
+      margin-top: 30px;
+      > div {
+        width: 100%;
+        background-color: rgba(255, 255, 255, .300);
+        @include clearfix();
+        display: none;
+        &:first-child {
+          display: inline-block;
+        }
+        span {
+          padding: 0 20px;
+          float: left;
+          display: inline-block;
+          font-size: 16px;
+          width: 50%;
+
+          p {
+            line-height: 22px;
+          }
+
+          &:last-child {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+  }
+}
