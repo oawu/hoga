@@ -75,6 +75,7 @@ class Anns extends Admin_controller {
         ));
 
     $posts = OAInput::post ();
+    $posts['content'] = OAInput::post ('content', false);
 
     if ($msg = $this->_validation_posts ($posts))
       return redirect_message (array ('admin', $this->uri_1, 'add'), array (
@@ -121,6 +122,7 @@ class Anns extends Admin_controller {
         ));
 
     $posts = OAInput::post ();
+    $posts['content'] = OAInput::post ('content', false);
 
     if ($msg = $this->_validation_posts ($posts))
       return redirect_message (array ('admin', $this->uri_1, $this->ann->id, 'edit'), array (

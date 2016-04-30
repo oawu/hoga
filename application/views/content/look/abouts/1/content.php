@@ -84,7 +84,7 @@
 <br/>
 <nav>
   <div>
-    HMOE > About
+    <a href='<?php echo base_url ('look');?>'>HMOE</a> > <a href='<?php echo base_url ('look', 'abouts');?>' class='s'>About</a>
   </div>
 </nav>
 <?php echo render_cell ('look_cell', 'footer', false);?>

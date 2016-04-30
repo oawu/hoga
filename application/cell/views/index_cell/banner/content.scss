@@ -23,7 +23,7 @@
     cursor: pointer;
     z-index: 99;
     font-size: 70px;
-    color: rgba(255, 255, 255, .800);
+    color: rgba(255, 255, 255, .600);
     @include transition(color .3s);
     
     &:hover {

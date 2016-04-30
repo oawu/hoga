@@ -1,4 +1,4 @@
-<header class='<?php echo $is_fix ? 'ff' : '';?>'>
+<header class='<?php echo $is_fix ? 'ff' : 'x';?>'>
   <div>
     <a href='<?php echo base_url ('look');?>'>
       <img src='<?php echo base_url ('resource', 'image', 'looklogo.png');?>'>

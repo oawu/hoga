@@ -230,6 +230,13 @@ nav {
     color: rgba(58, 58, 59, 1.00);
     font-size: 14px;
     font-weight: bold;
+    a {
+      @include a(1, false, rgba(58, 58, 59, 1.00), rgba(201, 31, 36, 1.00));
+      font-weight: bold;
+      &.s {
+        color: rgba(201, 31, 36, 1.00);
+      }
+    }
   }
 }
 .d {

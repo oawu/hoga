@@ -29,7 +29,7 @@
       <a href='<?php echo base_url ('ann', $ann->id);?>'>
         <header>
           <h2><?php echo $ann->title;?></h2>
-          <span><?php echo $ann->created_at->format ('Y.m.t');?> <?php echo $ann->brand ? $ann->brand->name : 'info';?></span>
+          <span><?php echo $ann->created_at->format ('Y.m.t');?> / <?php echo $ann->brand ? $ann->brand->name : 'info';?></span>
         </header>
         <article><?php echo $ann->mini_content (300);?></article>
       </a>

@@ -20,14 +20,14 @@
       <tr>
         <th>小 圖：</th>
         <td>
-          <input type='file' name='big' value='' />
+          <input type='file' name='small' value='' />
         </td>
       </tr>
 
       <tr>
         <th>大 圖：</th>
         <td>
-          <input type='file' name='small' value='' />
+          <input type='file' name='big' value='' />
         </td>
       </tr>
 

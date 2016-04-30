@@ -139,6 +139,11 @@
             border: 1px solid rgba(24, 38, 62, 1.00);
             text-align: center;
             padding: 10px 5px;
+
+            &:hover {
+              background-color: rgba(24, 38, 62, 1.00);
+              color: rgba(255, 255, 255, 1.00);
+            }
           }
         }
       }

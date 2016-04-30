@@ -22,16 +22,16 @@
       <tr>
         <th>小 圖：</th>
         <td>
-          <?php echo (string)$product->big ? img ($product->big->url ('100x100c'), false, 'class="name"') : '';?>
-          <input type='file' name='big' value='' />
+          <?php echo (string)$product->small ? img ($product->small->url ('100x100c'), false, 'class="name"') : '';?>
+          <input type='file' name='small' value='' />
         </td>
       </tr>
 
       <tr>
         <th>大 圖：</th>
         <td>
-          <?php echo (string)$product->small ? img ($product->small->url ('100x100c'), false, 'class="name"') : '';?>
-          <input type='file' name='small' value='' />
+          <?php echo (string)$product->big ? img ($product->big->url ('100x100c'), false, 'class="name"') : '';?>
+          <input type='file' name='big' value='' />
         </td>
       </tr>
 

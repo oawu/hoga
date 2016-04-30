@@ -10,7 +10,7 @@
   <?php foreach ($anns as $ann) { ?>
           <a href='<?php echo base_url ('ann', $ann->id);?>'>
             <div><?php echo $ann->mini_content ();?></div>
-            <div><?php echo $ann->created_at->format ('Y.m.d');?> <?php echo $ann->brand ? $ann->brand->name : 'info';?></div>
+            <div><?php echo $ann->created_at->format ('Y.m.d');?> / <?php echo $ann->brand ? $ann->brand->name : 'info';?></div>
           </a>
   <?php } ?>
 

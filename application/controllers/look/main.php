@@ -15,7 +15,7 @@ class main extends Look_controller {
     $d = '';
     for ($i = 0; $i < $ps; $i++) $d .= '<a' . ($i == $offset ? ' class="a"' : '') . '></a>';
 
-    $products = LookProduct::find ('all', array ('limit' => $limit, 'offset' => $offset, 'order' => 'id DESC', 'conditions' => array ('is_enabled = ?', LookProduct::IS_ENABLED)));
+    $products = LookProduct::find ('all', array ('limit' => $limit, 'offset' => $offset * $limit, 'order' => 'id DESC', 'conditions' => array ('is_enabled = ?', LookProduct::IS_ENABLED)));
 
     return $this->output_json (array ('s' => true, 'd' => $d, 'p' => $this->load_content (array (
         'products' => $products

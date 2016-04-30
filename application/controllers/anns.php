@@ -29,6 +29,7 @@ class Anns extends Site_controller {
 
     $configs = array ('anns', '%s');
     $conditions = conditions ($columns, $configs);
+    Ann::addConditions ($conditions, 'is_enabled = 1');
 
     $limit = 10;
     $total = Ann::count (array ('conditions' => $conditions));

@@ -30,4 +30,8 @@ $(function () {
     $banner.addClass ('transition');
   }, 500);
 
+  setInterval (function () {
+    $banner.find ('a:last-child').click ();
+  }, 5000);
+
 });

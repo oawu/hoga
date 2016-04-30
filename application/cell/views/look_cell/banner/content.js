@@ -7,7 +7,7 @@ $(function () {
   var $banner = $('#banner_'), timer;
 
   $banner.css ({
-    'max-height': $(window).height ()
+    'max-height': $(window).height () - 100
   });
 
   $banner.find ('a:first-child').click (function () {
@@ -16,7 +16,7 @@ $(function () {
     $first.remove ();
     clearTimeout (timer);
     timer = setTimeout (function () {
-      $banner.height ($banner.find ('img').eq (1).height ());
+      $banner.height ($banner.find ('img').eq (1).height () - 100);
     }, 100);
   });
   $banner.find ('a:last-child').click (function () {
@@ -26,7 +26,7 @@ $(function () {
 
     clearTimeout (timer);
     timer = setTimeout (function () {
-      $banner.height ($banner.find ('img').eq (1).height ());
+      $banner.height ($banner.find ('img').eq (1).height () - 100);
     }, 100);
   }).click ();
   

@@ -68,6 +68,11 @@ body {
     font-size: 15px;
     line-height: 20px;
     color: rgba(128, 129, 130, 1.00);
+
+    img {
+      position: relative !important;
+      z-index: auto;
+    }
   }
 }
 #bottom {

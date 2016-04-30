@@ -6,7 +6,7 @@
 $(function () {
   $(window).scroll (function () {
     var t = $(this).scrollTop ();
-    if (t > $(window).height ())
+    if (t > $(window).height () - 100)
       $('header').addClass ('f');
     else
       $('header').removeClass ('f');
