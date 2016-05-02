@@ -4,4 +4,7 @@
  */
 
 $(function () {
+  if ($('._m').length > 0) {
+    alert ($('._m').text ());
+  }
 });

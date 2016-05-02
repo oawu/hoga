@@ -19,11 +19,11 @@
       <span>全省代理商</span>
       <span>Store</span>
     </a>
-    <a href=''>
+    <a href='mailto:info@hogaoptical.com.tw'>
       <span>聯絡我們</span>
       <span>Contact</span>
     </a>
-    <a href=''>
+    <a href='https://www.facebook.com/lookocchiali.tw/?fref=ts' target='_blank'>
       <span>Look粉絲團</span>
       <span>Facebook</span>
     </a>

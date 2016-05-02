@@ -13,7 +13,7 @@
       <div>
         <input type='text' name='company' placeholder='公司名稱 / Company Name' />
         <input type='text' name='name' placeholder='您的稱呼 / Your Name *' />
-        <input type='text' name='main' placeholder='電子信箱 / E-mail address *' />
+        <input type='text' name='mail' placeholder='電子信箱 / E-mail address *' />
         <input type='text' name='phone' placeholder='連絡電話 / Telephone Number' />
       </div>
       <textarea name='message' placeholder='請輸入您的問題或意見 / Please enter a question or topic here. *'></textarea>

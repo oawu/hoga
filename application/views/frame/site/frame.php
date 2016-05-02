@@ -13,5 +13,8 @@
   <body lang="zh-tw">
     <?php echo isset ($hidden_list) ? $hidden_list : ''; ?>
     <?php echo isset ($content) ? $content : ''; ?>
+
+
+<?php if ($_flash_message = Session::getData ('_flash_message', true)) { ?><div class='_m'><?php echo $_flash_message;?></div><?php }?>
   </body>
 </html>
