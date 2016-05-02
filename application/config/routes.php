@@ -12,6 +12,7 @@ Route::get ('/ann/(:id)', 'anns@show($1)');
 
 Route::group ('admin', function () {
   Route::get ('/', 'main');
+  Route::resourcePagination_is_enabled (array ('users'), 'users');
   Route::resourcePagination_is_enabled (array ('brands'), 'brands');
   Route::resourcePagination_is_enabled (array ('anns'), 'anns');
   Route::resourcePagination_is_enabled (array ('banners'), 'banners');
