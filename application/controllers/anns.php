@@ -31,7 +31,7 @@ class Anns extends Site_controller {
     $conditions = conditions ($columns, $configs);
     Ann::addConditions ($conditions, 'is_enabled = 1');
 
-    $limit = 10;
+    $limit = 5;
     $total = Ann::count (array ('conditions' => $conditions));
     $offset = $offset < $total ? $offset : 0;
 

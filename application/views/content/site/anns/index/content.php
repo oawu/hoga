@@ -8,7 +8,6 @@
   <div id='year'>
     <div>
       <a<?php echo $year == 2016 ? ' class="a"' : '';?> data-val='2016'>2016</a>
-      <a<?php echo $year == 2015 ? ' class="a"' : '';?>  data-val='2015'>2015</a>
     </div>
   </div>
 

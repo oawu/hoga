@@ -7,6 +7,7 @@
         <span>關於 ▪ LOOK</span>
         <span>意是直覺行動，是形體與和諧的表達，是內在視野不斷演進的表現</span>
         <a href='<?php echo base_url ('look', 'abouts');?>'>> 詳細介紹</a>
+        <img src='<?php echo base_url ('resource', 'image', 'cenicon02.png');?>'>
       </div>
     </div>
     <div class='r'>

@@ -29,6 +29,14 @@
         height: 100%;
         background-color: rgba(39, 40, 34, .500);
         color: rgba(255, 254, 255, 1.00);
+        position: relative;
+        img {
+          position: absolute;
+          left: calc((100% - 90px) / 2);
+          top: 20px;
+          display: inline-block !important;
+          width: 90px;
+        }
         span {
           display: inline-block;
           width: 100%;
@@ -61,6 +69,7 @@
           border: 2px solid rgba(168, 36, 34, 1.00);
           cursor: pointer;
           font-size: 15px;
+          text-decoration: none;
           @include transition(all .3s);
 
           &:hover {
