@@ -43,7 +43,7 @@ class main extends Look_controller {
       return '<a' . ($y == $year ? ' class="a"' : '') . '>' . $y . '</a>';
     }, column_array (LookPress::find ('all', array ('select' => 'year', 'group' => 'year', 'order' => 'year DESC')), 'year')));
 
-    $presses = LookPress::find ('all', array ('limit' => $limit, 'order' => 'id DESC', 'conditions' => array ('year = ? AND is_enabled = ?', $year, LookPress::IS_ENABLED)));
+    $presses = LookPress::find ('all', array ('order' => 'id DESC', 'conditions' => array ('year = ? AND is_enabled = ?', $year, LookPress::IS_ENABLED)));
 
     return $this->output_json (array ('s' => true, 'y' => $y, 'p' => $this->load_content (array (
         'presses' => $presses
