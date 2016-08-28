@@ -5,7 +5,7 @@
  * @copyright   Copyright (c) 2016 OA Wu Design
  */
 
-class main extends Look_controller {
+class Main extends Look_controller {
 
   public function products () {
     $offset = ($offset = OAInput::get ('p')) ? $offset : 0;

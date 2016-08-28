@@ -29,3 +29,7 @@ Route::group ('look', function () {
   Route::get ('/abouts/', 'abouts@index(1)');
   Route::get ('/abouts/2', 'abouts@index(2)');
 });
+
+Route::group ('kawashima', function () {
+  Route::get ('/', 'main');
+});
