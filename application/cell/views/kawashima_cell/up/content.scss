@@ -1,0 +1,30 @@
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2016 OA Wu Design
+ */
+
+@import "_oa";
+
+#up {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  display: none;
+  width: 61px;
+  height: 33px;
+  cursor: pointer;
+  &.s {
+    display: inline-block;
+  }
+
+  background: image-url('kawashima/topicon.jpg', false, false);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+
+  &:hover {
+  background: image-url('kawashima/topicon_hover.jpg', false, false);
+  }
+  // img {
+  //   width: 100%;
+  // }
+}

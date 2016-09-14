@@ -3,4 +3,6 @@
  * @copyright   Copyright (c) 2016 OA Wu Design
  */
 
-@import "_oa";
+$(function () {
+  $('#block_2_').imgLiquid ({verticalAlign: 'center'});
+});
