@@ -21,9 +21,22 @@ Route::group ('admin', function () {
   Route::resourcePagination_is_enabled (array ('look_presses'), 'look_presses');
   Route::resourcePagination_is_enabled (array ('look_store_tags'), 'look_store_tags');
   Route::resourcePagination_is_enabled (array ('look_stores'), 'look_stores');
+  
+  Route::resourcePagination_is_enabled (array ('kawashima_banners'), 'kawashima_banners');
+  Route::resourcePagination_is_enabled (array ('kawashima_products'), 'kawashima_products');
+  Route::resourcePagination_is_enabled (array ('kawashima_presses'), 'kawashima_presses');
+  Route::resourcePagination_is_enabled (array ('kawashima_store_tags'), 'kawashima_store_tags');
+  Route::resourcePagination_is_enabled (array ('kawashima_stores'), 'kawashima_stores');
 });
 
 Route::group ('look', function () {
+  Route::get ('/', 'main');
+  Route::get ('/abouts/1', 'abouts@index(1)');
+  Route::get ('/abouts/', 'abouts@index(1)');
+  Route::get ('/abouts/2', 'abouts@index(2)');
+});
+
+Route::group ('kawashima', function () {
   Route::get ('/', 'main');
   Route::get ('/abouts/1', 'abouts@index(1)');
   Route::get ('/abouts/', 'abouts@index(1)');
