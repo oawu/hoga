@@ -23,7 +23,7 @@
       <span>聯絡我們</span>
       <span>Contact</span>
     </a>
-    <a href='https://www.facebook.com/kawashimaocchiali.tw/?fref=ts' target='_blank'>
+    <a href='https://www.facebook.com/kawashimaoptical/' target='_blank'>
       <span>川嶋粉絲團</span>
       <span>Facebook</span>
     </a>
