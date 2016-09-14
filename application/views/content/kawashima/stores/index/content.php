@@ -1,39 +1,32 @@
 <?php echo render_cell ('kawashima_cell', 'header', true, 'stores');?>
 
-<div id='banner'>
-  <img src='<?php echo base_url ('resource', 'image', 'storetopbg.jpg');?>'>
-  <div>
-    <div class='t'>
-      <img src='<?php echo base_url ('resource', 'image', 'stortopicon.png');?>'>
-      <span>STORE</span>
-      <span>全省代理商</span>
-    </div>
-  </div>
-</div>
-<?php 
+<div id='banner'></div>
+
+<div class='container'>
+<?php
   foreach ($tags as $tag) { ?>
     <div class='tag'>
-      <div>
-        <div class='ent'><span><?php echo $tag->en_name;?></span></div>
-        <div class='t'><img src='<?php echo base_url ('resource', 'image', 'storesmallicon.png');?>' /><?php echo $tag->name;?></div>
-        <div class='ss'>
+      <div class='header'>
+        <div>
+          <span><?php echo $tag->name;?></span>
+          <span><?php echo $tag->en_name;?></span>
+        </div>
+      </div>
+
+<?php if ($tag->stores) { ?>
+        <div class='stores'>
     <?php foreach ($tag->stores as $store) { ?>
-            <div>
-              <span><?php echo $store->name;?></span>
-              <div><div><img src='<?php echo base_url ('resource', 'image', 'phone.png');?>'/></div><span><?php echo $store->phone;?></span></div>
-              <div><div><img src='<?php echo base_url ('resource', 'image', 'map.png');?>'/></div><span><?php echo $store->address;?></span></div>
-              <div class='map' data-address='<?php echo $store->address;?>'></div>
+            <div class='store'>
+              <h3><?php echo $store->name;?></h3>
+              <span><?php echo $store->phone;?></span>
+              <span><?php echo $store->address;?></span>
             </div>
     <?php } ?>
         </div>
-      </div>
+<?php } ?>
     </div>
 <?php
   } ?>
-
-<nav>
-  <div>
-    <a href='<?php echo base_url ('kawashima');?>'>HMOE</a> > <a href='<?php echo base_url ('kawashima', 'stores');?>' class='s'>Store</a>
-  </div>
-</nav>
+</div>
+<?php echo render_cell ('kawashima_cell', 'up');?>
 <?php echo render_cell ('kawashima_cell', 'footer', false);?>

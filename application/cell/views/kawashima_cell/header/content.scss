@@ -10,6 +10,7 @@ header {
   height: 120px;
   background-color: rgba(255, 255, 255, 1.00);
   min-width: $mainWidth;
+  width: 100%;
   
   @include box-shadow(0 0 10px rgba(39, 40, 34, .500));
   // &.x {
