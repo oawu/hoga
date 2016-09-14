@@ -17,12 +17,12 @@
     display: inline-block;
   }
 
-  background: image-url('kawashima/topicon.jpg', false, false);
+  background: image-url('kawashima/topicon.png', false, false);
   background-position: 50% 50%;
   background-repeat: no-repeat;
 
   &:hover {
-  background: image-url('kawashima/topicon_hover.jpg', false, false);
+    background: image-url('kawashima/topicon_hover.png', false, false);
   }
   // img {
   //   width: 100%;

@@ -31,7 +31,7 @@
         foreach ($stores as $store) { ?>
           <tr>
             <td data-title='名稱' width='120'><?php echo $store->name;?></td>
-            <td data-title='電話' width='120'><?php echo $store->phone;?></td>
+            <td data-title='電話' width='180'><?php echo $store->phone;?></td>
             <td data-title='地址' ><?php echo $store->address;?></td>
             <td data-title='是否啟用' width='90'>
               <label class='index_checkbox'>
