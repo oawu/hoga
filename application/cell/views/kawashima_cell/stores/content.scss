@@ -1,0 +1,77 @@
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2016 OA Wu Design
+ */
+
+@import "_oa";
+
+#stores {
+  display: inline-block;
+  width: 100%;
+  padding-bottom: 0;
+
+  > div {
+    position: relative;
+    display: inline-block;
+    width: $mainWidth;
+    margin-top: 60px;
+
+    background: image-url('kawashima/storeimg.jpg', false, false);
+    background-size: cover;
+
+    height: 280px;
+    border-top: 5px solid rgba(210, 175, 55, 1.00);
+
+    a {
+      position: absolute;
+      bottom: 20px;
+      left: calc(50% - 200px / 2);
+      display: inline-block;
+      width: 200px;
+      padding: 10px 30px;
+      cursor: pointer;
+      border: 1px solid rgba(255, 255, 255, 1.00);
+      color: rgba(255, 255, 255, 1.00);
+      font-size: 15px;
+      text-decoration: none;
+      @include transition(all .3s);
+
+      &:hover {
+        border-color: rgba(213, 176, 53, 1.00);
+        background-color: rgba(213, 176, 53, 1.00);
+      }
+    }
+
+    > h2 {
+      position: relative;
+      margin-top: 80px;
+      display: inline-block;
+      width: 100%;
+      color: white;
+      font-size: 30px;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+
+
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: -3px;
+        left: calc(50% - 100px / 2);
+        display: inline-block;
+        width: 100px;
+        height: 1px;
+        background-color: white;
+      }
+    }
+    > span {
+      display: inline-block;
+      width: 100%;
+      font-size: 17px;
+      display: inline-block;
+      margin: 0;
+      position: relative;
+      color: white;
+    }
+  }
+}

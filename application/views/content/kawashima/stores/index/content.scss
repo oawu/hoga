@@ -1,0 +1,103 @@
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2016 OA Wu Design
+ */
+
+@import "_oa";
+
+html {
+  body {
+    @media screen and (min-width: 1000px) {
+      width: 100% !important;
+    }
+  }
+}
+#banner {
+  min-width: $mainWidth;
+  height: 330px;
+  background: image-url('kawashima/storebanner.jpg', false, false);
+  background-size: cover;
+  background-position: center; 
+}
+.container {
+  width: $mainWidth;
+  margin: 0 auto;
+  padding-top: 70px;
+  padding-bottom: 100px;
+}
+.tag {
+  + .tag {
+    margin-top: 50px;
+  }
+  .stores {
+    padding-left: 200px;
+    @include clearfix();
+    
+    .store {
+      width: 50%;
+      float: left;
+      display: inline-block;
+      text-align: left;
+      > * {
+        display: inline-block;
+        width: 100%;
+      }
+      span {
+        color: rgba(126, 127, 128, 1.00);
+        padding-left: 20px;
+        background-position: left;
+        height: 20px;
+        
+        + span {
+          margin-top: 5px;
+        }
+        &:nth-child(2) {
+          background: image-url('kawashima/phoneicon.png', false, false);
+          background-repeat: no-repeat;
+        }
+        &:nth-child(3) {
+          background: image-url('kawashima/mapicon.png', false, false);
+          background-repeat: no-repeat;
+        }
+      }
+    }
+  }
+  .header {
+    position: relative;
+    text-align: left;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: calc(50% - 2px / 2);
+      display: inline-block;
+      width: 100%;
+      height: 2px;
+      background-color: rgba(221, 197, 102, 1.00);
+      z-index: 1;
+    }
+
+    div {
+      position: relative;
+      display: inline-block;
+      z-index: 2;
+      width: 200px;
+      background-color: rgba(255, 255, 255, 1.00);
+      
+      span {
+        display: inline-block;
+        width: 100%;
+        @include overflow-docx3();
+
+        &:first-child {
+          color: rgba(77, 78, 79, 1.00);
+        }
+        &:last-child {
+          color: rgba(213, 174, 42, 1.00);
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}

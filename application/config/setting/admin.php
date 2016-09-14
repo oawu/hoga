@@ -24,6 +24,14 @@ $admin['menu'] = array (
         '代理商分類管理' => array ('icon' => 'icon-images', 'href' => base_url ('admin', 'look_store_tags'), 'class' => 'look_store_tags', 'method' => '', 'target' => '_self'),
         '代理商管理' => array ('icon' => 'icon-images', 'href' => base_url ('admin', 'look_stores'), 'class' => 'look_stores', 'method' => '', 'target' => '_self'),
       ),
+    // kawashima
+    '川嶋 後台' => array (
+        '產品管理' => array ('icon' => 'icon-images', 'href' => base_url ('admin', 'kawashima_products'), 'class' => 'kawashima_products', 'method' => '', 'target' => '_self'),
+        '媒體管理' => array ('icon' => 'icon-images', 'href' => base_url ('admin', 'kawashima_presses'), 'class' => 'kawashima_presses', 'method' => '', 'target' => '_self'),
+        'Banner管理' => array ('icon' => 'icon-images', 'href' => base_url ('admin', 'kawashima_banners'), 'class' => 'kawashima_banners', 'method' => '', 'target' => '_self'),
+        '代理商分類管理' => array ('icon' => 'icon-images', 'href' => base_url ('admin', 'kawashima_store_tags'), 'class' => 'kawashima_store_tags', 'method' => '', 'target' => '_self'),
+        '代理商管理' => array ('icon' => 'icon-images', 'href' => base_url ('admin', 'kawashima_stores'), 'class' => 'kawashima_stores', 'method' => '', 'target' => '_self'),
+      ),
     '其他' => array (
         '工具' => array ('no_show' => true, 'icon' => '', 'href' => base_url ('tools'), 'class' => 'tools', 'method' => '', 'target' => '_self'),
       ),

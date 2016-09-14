@@ -23,7 +23,7 @@
       <span>聯絡我們</span>
       <span>Contact</span>
     </a>
-    <a href='https://www.facebook.com/lookocchiali.tw/?fref=ts' target='_blank'>
+    <a href='https://www.facebook.com/lookocchiali.tw/' target='_blank'>
       <span>Look粉絲團</span>
       <span>Facebook</span>
     </a>

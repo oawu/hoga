@@ -1,0 +1,106 @@
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2016 OA Wu Design
+ */
+
+@import "_oa";
+
+#abouts_ {
+  display: inline-block;
+  display: block;
+  width: 100%;
+  min-width: $mainWidth;
+  background: image-url('kawashima/cenbg01.jpg', false, false);
+  background-size: cover;
+  padding-bottom: 80px;
+
+  .container {
+    display: inline-block;
+    width: 100%;
+    max-width: $mainWidth;
+    width: 100%;
+    margin: 0 auto;
+    
+    h2 {
+      position: relative;
+      margin-top: 80px;
+      display: inline-block;
+      width: 100%;
+      color: rgba(19, 19, 19, 1.00);
+      font-size: 30px;
+
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: -20px;
+        left: calc(50% - 125px / 2);
+        display: inline-block;
+        width: 125px;
+        height: 5px;
+        background: rgba(213, 176, 33, 1.00);
+      }
+    }
+    > p {
+      // font-weight: bold;
+      font-size: 16px;
+      display: inline-block;
+      width: 100%;
+      + p {
+        margin-top: 0;
+      }
+    }
+    section {
+      display: inline-block;
+      width: 100%;
+
+
+      margin-top: 15px;
+      padding: 10px 0;
+      text-align: left;
+      border: 1px solid rgba(211, 177, 54, 1.00);
+      border-left: 0;
+      border-right: 0;
+      line-height: 24px;
+      font-size: 16px;
+    }
+  }
+  .blocks {
+    // border: 1px solid rgba(255, 0, 0, .3);
+    margin-top: 20px;
+
+    @include clearfix();
+    
+    > div {
+      display: inline-block;
+      float: left;
+
+      width: calc((100% - 35px * 2) / 3);
+        // border: 1px solid rgba(255, 0, 0, .3);
+      &:nth-child(3n + 2) {
+        margin: 0 35px;
+      }
+
+      h3 {
+        color: rgba(180, 145, 0, 1.00);
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+      span, p {
+        display: inline-block;
+        width: 100%;
+        font-size: 16px;
+        color: rgba(59, 61, 64, .900);
+      }
+      p {
+        height: 210px;
+        margin-top: 25px;
+        margin-bottom: 0;
+        background-color: rgba(255, 255, 255, .40);
+        padding: 15px;
+        border: 1px solid rgba(190, 199, 212, 1.00);
+        line-height: 25px;
+        text-align: left;
+      }
+    }
+  }
+}

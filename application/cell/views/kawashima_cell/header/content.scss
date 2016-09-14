@@ -1,0 +1,130 @@
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2016 OA Wu Design
+ */
+
+@import "_oa";
+
+header {
+  position: relative;
+  height: 120px;
+  background-color: rgba(255, 255, 255, 1.00);
+  min-width: $mainWidth;
+  width: 100%;
+  
+  @include box-shadow(0 0 10px rgba(39, 40, 34, .500));
+  // &.x {
+  //   position: fixed;
+  //   left: 0;
+  //   bottom: 0;
+  //   display: inline-block;
+  //   width: 100%;
+  //   z-index: 999;
+  // }
+  background: image-url('kawashima/navbg.jpg', false, false);
+
+
+  &.ff, &.f {
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: inline-block;
+    width: 100%;
+    z-index: 999;
+    height: 123px;
+    border-bottom: 3px solid rgba(255, 255, 255, 1.00);
+    
+    + * {
+      margin-top: 100px;
+    }
+  }
+  > div {
+    display: inline-block;
+    width: $mainWidth;
+    height: 100%;
+    @include clearfix();
+    
+    a {
+      position: relative;
+      float: left;
+      display: inline-block;
+      height: 100%;
+      width: calc((100% - 160px) / 6);
+      @include transition(background .3s);
+
+      &:before {
+        position: absolute;
+        right: 0;
+        top: 20px;
+
+        content: '';
+        width: 1px;
+        height: calc(100% - 20px * 2);
+        
+        background-color: rgba(210, 211, 212, .550);
+      }
+      + a {
+        margin-top: 2px;
+        padding-top: 10px;
+        &:hover, &.a {
+          // background-color: rgba(238, 239, 240, 1.00);
+          // border-bottom: 3px solid rgba(195, 13, 49, 1.00);
+          // span:last-child {
+            // border-bottom: 1px solid rgba(255, 0, 0, .3);
+
+          // }/
+          &:after {
+            content: '';
+            position: absolute;
+            bottom: 10px;
+            left: -1px;
+            display: inline-block;
+            width: calc(100% + 1px * 2);
+            height: 3px;
+            background-color: rgba(213, 176, 53, 1.00);
+          }
+        }
+      }
+      // &:last-child {
+      //   &:after {
+
+      //     position: absolute;
+      //     right: 0;
+      //     top: 20px;
+
+      //     content: '';
+      //     width: 1px;
+      //     height: calc(100% - 20px * 2);
+          
+      //     background-color: rgba(210, 211, 212, .550);
+      //   }
+      // }
+      &:first-child {
+        width: 160px;
+        text-align: left;
+        
+        img {
+          width: 105px;
+          margin-top: 8px;
+          margin-left: 20px;
+        }
+      }
+      span {
+        display: inline-block;
+        width: 100%;
+        font-size: 16px;
+        margin-top: 5px;
+        font-style: italic;
+        color: rgba(213, 176, 53, 1.00);
+
+        &:first-child {
+          margin-top: 25px;
+          font-size: 20px;
+          font-weight: bold;
+          font-style: normal;
+          color: rgba(255, 255, 255, 1.00);
+        }
+      }
+    }
+  }
+}
