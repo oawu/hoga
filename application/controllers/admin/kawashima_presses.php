@@ -28,6 +28,7 @@ class Kawashima_presses extends Admin_controller {
 
   public function index ($offset = 0) {
     $columns = array ( 
+        array ('key' => 'title',       'title' => '標題',      'sql' => 'title LIKE ?'), 
         array ('key' => 'year_bigger',  'title' => '年份 大於', 'sql' => 'year >= ?'), 
         array ('key' => 'year_smaller', 'title' => '年份 小於', 'sql' => 'year <= ?'), 
       );
@@ -219,6 +220,9 @@ class Kawashima_presses extends Admin_controller {
 
     if (!(isset ($posts['year']) && is_numeric ($posts['year'] = trim ($posts['year']))))
       return '沒有選擇年份！';
+
+    if (!(isset ($posts['title']) && ($posts['title'] = trim ($posts['title']))))
+      return '沒有填寫標題！';
 
     return '';
   }

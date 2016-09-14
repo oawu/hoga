@@ -4,6 +4,13 @@
     <tbody>
 
       <tr>
+        <th>標 題：</th>
+        <td>
+          <input type='text' name='title' value='<?php echo isset ($posts['title']) ? $posts['title'] : '';?>' placeholder='請輸入標題..' maxlength='200' pattern='.{1,200}' required title='輸入標題!' autofocus />
+        </td>
+      </tr>
+
+      <tr>
         <th>年 份：</th>
         <td>
           <select name='year'>
