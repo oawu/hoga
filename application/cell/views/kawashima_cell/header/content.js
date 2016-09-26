@@ -16,8 +16,9 @@ $(function () {
       $('body').animate ({ scrollTop: $(window.location.hash + '_').offset ().top - 100 }, 'slow');
     return false;
   };
-  // if (window.location.hash)
-  //   setTimeout (function () {
-  //     $('body').animate ({ scrollTop: $(window.location.hash + '_').offset ().top - 100 }, 'slow');
-  //   }, 500);
+    
+  if (window.location.hash)
+    setTimeout (function () {
+      $('body').animate ({ scrollTop: $(window.location.hash + '_').offset ().top - 100 }, 'slow');
+    }, 500);
 });

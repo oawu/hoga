@@ -63,7 +63,7 @@ class Main extends Kawashima_controller {
     if (!$press) $press = KawashimaPress::find ('one', array ('order' => $s ? 'id DESC' : 'id ASC', 'conditions' => array ('id != ? AND year = ? AND is_enabled = ?', $id, $year, KawashimaPress::IS_ENABLED)));
     if (!$press) return $this->output_json (array ('s' => false));
 
-    return $this->output_json (array ('s' => true, 'id' => $press->id, 'src' => $press->big->url ()));
+    return $this->output_json (array ('s' => true, 'id' => $press->id, 'title' => $press->title, 'src' => $press->big->url ()));
   }
   public function index () {
     return $this->add_hidden (array ('id' => 'products_url', 'value' => base_url ('kawashima', 'main', 'products')))

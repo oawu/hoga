@@ -19,12 +19,12 @@
     background: image-url('kawashima/storeimg.jpg', false, false);
     background-size: cover;
 
-    height: 280px;
+    height: 320px;
     border-top: 5px solid rgba(210, 175, 55, 1.00);
 
     a {
       position: absolute;
-      bottom: 20px;
+      bottom: 80px;
       left: calc(50% - 200px / 2);
       display: inline-block;
       width: 200px;

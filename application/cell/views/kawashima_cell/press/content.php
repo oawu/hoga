@@ -21,6 +21,7 @@
       </div>
     </div>
     <div class='center'>
+      <span></span>
       <img src='' />
     </div>
   </div>

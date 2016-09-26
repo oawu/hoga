@@ -37,6 +37,7 @@ $(function () {
   });
   $press.on ('click', '.p a', function () {
     $pressS.find ('img').attr ('src', $(this).data ('src'));
+    $pressS.find ('span').text ($(this).data ('title'));
     $pressS.data ('id', $(this).data ('id')).addClass ('s');
     $body.css ('overflow', 'hidden');
   });
@@ -52,6 +53,7 @@ $(function () {
       if (!result.s) return;
       $pressS.find ('img').attr ('src', result.src);
       $pressS.data ('id', result.id);
+      $pressS.find ('span').text (result.title);
     })
     .fail (function (result) {})
     .complete (function (result) {});
