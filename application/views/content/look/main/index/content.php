@@ -2,7 +2,6 @@
 <?php echo render_cell ('look_cell', 'header');?>
 <?php echo render_cell ('look_cell', 'block1');?>
 <?php echo render_cell ('look_cell', 'block2');?>
-<?php echo render_cell ('look_cell', 'video');?>
 <?php echo render_cell ('look_cell', 'features');?>
 <?php echo render_cell ('look_cell', 'block3');?>
 <?php echo render_cell ('look_cell', 'tab');?>

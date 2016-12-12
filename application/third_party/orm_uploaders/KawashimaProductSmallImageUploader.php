@@ -9,7 +9,7 @@ class KawashimaProductSmallImageUploader extends OrmImageUploader {
 
   public function getVersions () {
     return array (
-        '' => array ('adaptiveResizeQuadrant', 280, 180, 'c'),
+        '' => array ('adaptiveResizeQuadrant', 230, 180, 'c'),
         '100x100c' => array ('adaptiveResizeQuadrant', 100, 100, 'c'),
       );
   }
