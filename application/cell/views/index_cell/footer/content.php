@@ -1,1 +1,1 @@
-<footer>Copyrights 2016  HOGA OPTICAL. All Rights Reserved.</footer>
+<footer>Copyrights Gaho OPTICAL. All Rights Reserved.</footer>

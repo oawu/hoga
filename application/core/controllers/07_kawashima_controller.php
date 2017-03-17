@@ -27,7 +27,7 @@ class Kawashima_controller extends Oa_controller {
   private function _add_meta () {
     // <meta name="description" content=“">
                 
-    return $this->add_meta (array ('name' => 'keywords', 'content' => 'Kawashima,Japan,Japanese,日本,日本設計,日本眼鏡,嘉豪,hoga,光學,台灣總代理,眼鏡批發業,精密儀器批發業,國際貿易'))
+    return $this->add_meta (array ('name' => 'keywords', 'content' => 'Kawashima,Japan,Japanese,日本,日本設計,日本眼鏡,嘉豪,gaho,光學,台灣總代理,眼鏡批發業,精密儀器批發業,國際貿易'))
                 ->add_meta (array ('name' => 'description', 'content' => '眼鏡の産地、鯖江にて若者向けに 鯖江市生產，針對年輕人所設計，完全符合市場時尚與潮流之作。川嶋Kawashima Optical為日本福井縣鯖江市當地多位設計師一同利用靈感、巧思、創作來設計出最具流行尖端的新潮眼鏡，日本眼鏡王國福井縣產地，更是品質保證。'));
   }
 
